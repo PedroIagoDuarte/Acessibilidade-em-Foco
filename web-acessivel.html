@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Princípios das WCAG e boas práticas para criar páginas web acessíveis.">
+  <title>Web acessível – Acessibilidade em Foco</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-title"><a href="index.html">Acessibilidade em Foco</a></p>
+
+      <div id="toolbar" class="toolbar" role="group" aria-label="Ferramentas de acessibilidade" hidden>
+        <button type="button" id="btn-diminuir" aria-label="Diminuir tamanho do texto">A−</button>
+        <button type="button" id="btn-padrao" aria-label="Restaurar tamanho padrão e contraste">A</button>
+        <button type="button" id="btn-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        <button type="button" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="o-que-e.html">O que é acessibilidade</a></li>
+          <li><a href="cotidiano.html">No dia a dia</a></li>
+          <li><a href="tecnologias-assistivas.html">Tecnologias assistivas</a></li>
+          <li><a href="web-acessivel.html" aria-current="page">Web acessível</a></li>
+          <li><a href="contato.html">Contato e fontes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="container">
+      <article>
+        <h1>Web acessível</h1>
+
+        <p>
+          Boa parte da vida cotidiana acontece online: bancos, escola, saúde, compras, serviços públicos.
+          Se um site não é acessível, ele deixa pessoas de fora. As Diretrizes de Acessibilidade para
+          Conteúdo Web (WCAG), publicadas pelo W3C, são a principal referência para evitar isso.
+        </p>
+
+        <h2 id="pour">Os quatro princípios (POUR)</h2>
+
+        <figure>
+          <svg viewBox="0 0 560 120" role="img" aria-labelledby="fig2-titulo fig2-desc">
+            <title id="fig2-titulo">Princípios POUR das WCAG</title>
+            <desc id="fig2-desc">Quatro caixas lado a lado: Perceptível, Operável, Compreensível e Robusto.</desc>
+            <g fill="none" stroke="currentColor" stroke-width="3">
+              <rect x="10" y="20" width="125" height="80" rx="8"/>
+              <rect x="148" y="20" width="125" height="80" rx="8"/>
+              <rect x="286" y="20" width="125" height="80" rx="8"/>
+              <rect x="424" y="20" width="125" height="80" rx="8"/>
+            </g>
+            <g fill="currentColor" font-size="15" text-anchor="middle">
+              <text x="72" y="66">Perceptível</text>
+              <text x="210" y="66">Operável</text>
+              <text x="348" y="66">Compreensível</text>
+              <text x="486" y="66">Robusto</text>
+            </g>
+          </svg>
+          <figcaption>Figura 2 – Os quatro princípios das WCAG.</figcaption>
+        </figure>
+
+        <dl>
+          <dt><strong>Perceptível</strong></dt>
+          <dd>A informação pode ser percebida por diferentes sentidos. Exemplos: texto alternativo em imagens, legendas em vídeos e contraste suficiente.</dd>
+
+          <dt><strong>Operável</strong></dt>
+          <dd>Tudo pode ser usado por teclado, sem armadilhas de foco, com tempo suficiente e sem conteúdo que pisque de forma perigosa.</dd>
+
+          <dt><strong>Compreensível</strong></dt>
+          <dd>Textos legíveis, navegação previsível, idioma da página declarado e ajuda para corrigir erros em formulários.</dd>
+
+          <dt><strong>Robusto</strong></dt>
+          <dd>O código é bem formado e usa elementos semânticos, para funcionar com navegadores e tecnologias assistivas atuais e futuras.</dd>
+        </dl>
+
+        <h2 id="praticas">Boas práticas para quem programa</h2>
+        <ol>
+          <li>Declare o idioma: <code>&lt;html lang="pt-BR"&gt;</code>.</li>
+          <li>Use elementos semânticos: <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>, títulos <code>h1</code> a <code>h6</code> em ordem.</li>
+          <li>Escreva texto alternativo útil nas imagens (<code>alt</code>) e deixe <code>alt=""</code> nas decorativas.</li>
+          <li>Garanta contraste mínimo de 4,5:1 entre texto e fundo.</li>
+          <li>Permita usar tudo com o teclado e mantenha o foco visível.</li>
+          <li>Associe cada campo de formulário a um <code>label</code>.</li>
+          <li>Use links com textos que façam sentido sozinhos (evite "clique aqui").</li>
+          <li>Não dependa só da cor para transmitir informação.</li>
+          <li>Respeite <code>prefers-reduced-motion</code> e permita ampliar o texto até 200% sem perder conteúdo.</li>
+          <li>Teste com leitor de tela, só com o teclado e com ferramentas como o Lighthouse e o WAVE.</li>
+        </ol>
+
+        <h2 id="exemplo">Exemplo de código</h2>
+        <p>Um botão acessível usa o elemento correto, em vez de uma <code>div</code> clicável:</p>
+        <pre><code>&lt;button type="button" aria-pressed="false"&gt;
+  Alto contraste
+&lt;/button&gt;</code></pre>
+
+        <p>
+          Este site aplica essas práticas. Pressione <kbd>Tab</kbd> para navegar apenas pelo teclado
+          e use os botões no topo para testar o alto contraste e o aumento da fonte.
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto acadêmico de Engenharia de Software – atividade sobre desenvolvimento web acessível.</p>
+      <p><a href="#conteudo">Voltar ao início da página</a></p>
+    </div>
+  </footer>
+</body>
+</html>
