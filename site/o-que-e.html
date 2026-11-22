@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Entenda o que é acessibilidade, os tipos de deficiência e o conceito de desenho universal.">
+  <title>O que é acessibilidade – Acessibilidade em Foco</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-title"><a href="index.html">Acessibilidade em Foco</a></p>
+
+      <div id="toolbar" class="toolbar" role="group" aria-label="Ferramentas de acessibilidade" hidden>
+        <button type="button" id="btn-diminuir" aria-label="Diminuir tamanho do texto">A−</button>
+        <button type="button" id="btn-padrao" aria-label="Restaurar tamanho padrão e contraste">A</button>
+        <button type="button" id="btn-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        <button type="button" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="o-que-e.html" aria-current="page">O que é acessibilidade</a></li>
+          <li><a href="cotidiano.html">No dia a dia</a></li>
+          <li><a href="tecnologias-assistivas.html">Tecnologias assistivas</a></li>
+          <li><a href="web-acessivel.html">Web acessível</a></li>
+          <li><a href="contato.html">Contato e fontes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="container">
+      <article>
+        <h1>O que é acessibilidade?</h1>
+
+        <p>
+          Acessibilidade é a possibilidade de qualquer pessoa usar um espaço, um produto, um serviço
+          ou uma informação com autonomia e segurança. Isso inclui pessoas com deficiência, mas também
+          idosos, gestantes, pessoas com mobilidade reduzida temporária, crianças e qualquer um que
+          esteja em uma situação limitante, como carregar várias sacolas ou usar o celular sob o sol forte.
+        </p>
+
+        <h2 id="deficiencias">Tipos de deficiência e barreiras comuns</h2>
+        <p>
+          A acessibilidade busca remover barreiras. Uma barreira pode ser física (um degrau),
+          de comunicação (um vídeo sem legenda) ou de atitude (o preconceito). Veja alguns exemplos:
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Exemplos de barreiras e soluções por tipo de deficiência</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Barreira comum</th>
+                <th scope="col">Solução</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Visual</th>
+                <td>Imagens sem descrição, texto com pouco contraste</td>
+                <td>Texto alternativo, bom contraste, piso tátil</td>
+              </tr>
+              <tr>
+                <th scope="row">Auditiva</th>
+                <td>Vídeos sem legenda, avisos apenas sonoros</td>
+                <td>Legendas, intérprete de Libras, alertas visuais</td>
+              </tr>
+              <tr>
+                <th scope="row">Motora</th>
+                <td>Escadas, portas estreitas, botões pequenos</td>
+                <td>Rampas, elevadores, navegação por teclado</td>
+              </tr>
+              <tr>
+                <th scope="row">Intelectual e cognitiva</th>
+                <td>Linguagem complicada, excesso de informação</td>
+                <td>Linguagem simples, instruções passo a passo</td>
+              </tr>
+              <tr>
+                <th scope="row">Neurodivergências</th>
+                <td>Ruído, luzes piscando, ambientes confusos</td>
+                <td>Ambientes previsíveis, opção de reduzir animações</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="desenho-universal">Desenho universal</h2>
+        <p>
+          O desenho universal é a ideia de projetar produtos e ambientes que possam ser usados por
+          todas as pessoas, na maior extensão possível, sem precisar de adaptações. Em vez de
+          construir uma escada e depois improvisar uma rampa nos fundos, o projeto já nasce com
+          uma entrada que serve a todos.
+        </p>
+        <blockquote>
+          <p>Uma rampa ajuda quem usa cadeira de rodas, mas também quem empurra um carrinho de bebê, leva uma mala ou tem dor no joelho.</p>
+        </blockquote>
+
+        <h2 id="lei">O que diz a lei no Brasil</h2>
+        <p>
+          A Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei nº 13.146/2015, também chamada
+          Estatuto da Pessoa com Deficiência) trata a acessibilidade como um direito. Ela prevê regras
+          para edificações, transporte, comunicação e também para sites e aplicativos de órgãos públicos
+          e de empresas que atendem ao público.
+        </p>
+
+        <p class="note">
+          <strong>Para lembrar:</strong> acessibilidade não é um favor nem um recurso extra.
+          É uma condição para que todas as pessoas possam participar da vida em sociedade.
+        </p>
+
+        <p>Continue lendo: <a href="cotidiano.html">Acessibilidade no dia a dia</a>.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto acadêmico de Engenharia de Software – atividade sobre desenvolvimento web acessível.</p>
+      <p><a href="#conteudo">Voltar ao início da página</a></p>
+    </div>
+  </footer>
+</body>
+</html>
